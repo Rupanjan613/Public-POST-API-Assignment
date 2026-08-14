@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DataBridge | POST API</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <section class="hero">
+            <div class="badge">PUBLIC API PROJECT</div>
+
+            <h1>DataBridge</h1>
+
+            <p>
+                Submit information through a POST API
+                and view the returned response instantly.
+            </p>
+        </section>
+
+
+        <section class="workspace">
+
+            <!-- Form -->
+            <div class="form-panel">
+
+                <h2>Create Submission</h2>
+
+                <p class="description">
+                    Fill in the details below and send them to the API.
+                </p>
+
+                <form id="postForm">
+
+                    <label for="name">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="example@email.com"
+                        required
+                    >
+
+
+                    <label for="message">Your Message</label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Write something..."
+                        required
+                    ></textarea>
+
+
+                    <button type="submit" id="submitBtn">
+                        <span>Send Data</span>
+                        <span class="arrow">→</span>
+                    </button>
+
+                </form>
+
+                <div id="status"></div>
+
+            </div>
+
+
+            <!-- Information -->
+            <div class="info-panel">
+
+                <div class="api-icon">API</div>
+
+                <h2>POST Request</h2>
+
+                <p>
+                    Your form information is converted into JSON
+                    and submitted using JavaScript Fetch API.
+                </p>
+
+                <div class="flow">
+
+                    <div>
+                        <strong>01</strong>
+                        <span>Enter Data</span>
+                    </div>
+
+                    <div>
+                        <strong>02</strong>
+                        <span>POST Request</span>
+                    </div>
+
+                    <div>
+                        <strong>03</strong>
+                        <span>Receive Response</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Response Table -->
+
+        <section class="results">
+
+            <div class="results-heading">
+
+                <div>
+                    <span class="small-title">API RESPONSE</span>
+                    <h2>Submitted Records</h2>
+                </div>
+
+                <span class="record-badge" id="recordCount">
+                    0 Records
+                </span>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tableBody">
+
+                    </tbody>
+
+                </table>
+
+                <div id="emptyState">
+                    No records submitted yet.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            Built with HTML • CSS • JavaScript • Public REST API
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
